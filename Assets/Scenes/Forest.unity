@@ -436,7 +436,7 @@ Terrain:
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
-  m_DrawInstanced: 0
+  m_DrawInstanced: 1
   m_DrawTreesAndFoliage: 1
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
@@ -1037,7 +1037,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -1337,17 +1337,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1df3437b41dc48244bcd64e12ca68b87,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6014566
+      value: 2.1598
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1df3437b41dc48244bcd64e12ca68b87,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000071525574
+      value: 0.4057
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1df3437b41dc48244bcd64e12ca68b87,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.95359385
+      value: 2.9551
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1df3437b41dc48244bcd64e12ca68b87,
         type: 3}
@@ -1634,12 +1634,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 11c99bc0e40817f4589f749f35282b19,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.042
+      value: 1.155
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11c99bc0e40817f4589f749f35282b19,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1242466
+      value: 0.146
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11c99bc0e40817f4589f749f35282b19,
         type: 3}
