@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,13 @@ public class DeerMovement : MonoBehaviour
     private Vector3 direction = Vector3.right;
 
     // These Values are used to tweek the deer Movement
-    private float turningPower = 45;
-    private float MovementSpeed = 20f;
+    public float turningPower = 45;
+    public float MovementSpeed = 20f;
 
-    // These Values are used by the outside
-    public float speed;
+    [NonSerialized]
     public bool isInAir;
+    
+    public Animator _animator;
 
     // Start is called before the first frame update
     void Start()
@@ -46,12 +48,13 @@ public class DeerMovement : MonoBehaviour
         }
         if (input.magnitude > 0)
         {
-            Move(input);
+            Move(ref input);
         }
              
+        SetAnimationValues(input);
     }
 
-    private void Move(Vector2 input)
+    private void Move(ref Vector2 input)
     {
         // Set Rotation
         float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg - turningPower * Time.deltaTime*input.y;
@@ -64,12 +67,15 @@ public class DeerMovement : MonoBehaviour
             input.x = 0.8f;
         }
 
-        // Set Speed
-        float speed = MovementSpeed;
-
         // Move and rotate Deer
-        Vector3 force = direction * speed * input.x * Time.deltaTime;
+        Vector3 force = direction * MovementSpeed * input.x * Time.deltaTime;
         rigidbody.Move(transform.position + force, rotation);
+    }
+
+    private void SetAnimationValues(Vector2 input)
+    {
+        _animator.SetFloat("Speed", input.x);
+        _animator.SetBool("IsOnGround", !isInAir);
     }
 
 }
