@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeerAttack : MonoBehaviour
 {
+    public Animator _animator;
     private float deerReach = 2.5f;
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class DeerAttack : MonoBehaviour
             if (hit.collider != null)
             {
                 hit.collider.GetComponent<CampEquipment>().CreateDestruction();
+                _animator.SetTrigger("DoPushing");
             }
             return;
         }
@@ -33,6 +35,7 @@ public class DeerAttack : MonoBehaviour
             if (hit.collider != null)
             {
                 hit.collider.GetComponent<CampEquipment>().CreateDestruction();
+                _animator.SetTrigger("DoPushing");
             }
             return;
         }
@@ -42,6 +45,7 @@ public class DeerAttack : MonoBehaviour
             if (hit.collider != null)
             {
                 hit.collider.GetComponent<CampEquipment>().CreateDestruction();
+                _animator.SetTrigger("DoPushing");
             }
             return;
         }
