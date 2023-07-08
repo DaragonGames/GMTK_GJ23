@@ -19,10 +19,31 @@ public class DeerAttack : MonoBehaviour
     private void Attack(Vector3 facingDirection)
     {
         RaycastHit hit;
-        Physics.Raycast(transform.position, facingDirection,  out hit, deerReach, LayerMask.GetMask("Destroyable"));
-        if (hit.collider !=null)
+        if (Physics.Raycast(transform.position, facingDirection,  out hit, deerReach, LayerMask.GetMask("Destroyable")))
         {
-            hit.collider.GetComponent<CampEquipment>().CreateDestruction();
+            if (hit.collider != null)
+            {
+                hit.collider.GetComponent<CampEquipment>().CreateDestruction();
+            }
+            return;
+        }
+
+        if (Physics.Raycast(transform.position-new Vector3(0,0.5f,0), facingDirection, out hit, deerReach, LayerMask.GetMask("Destroyable")))
+        {
+            if (hit.collider != null)
+            {
+                hit.collider.GetComponent<CampEquipment>().CreateDestruction();
+            }
+            return;
+        }
+
+        if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), facingDirection, out hit, deerReach, LayerMask.GetMask("Destroyable")))
+        {
+            if (hit.collider != null)
+            {
+                hit.collider.GetComponent<CampEquipment>().CreateDestruction();
+            }
+            return;
         }
     }
 }
