@@ -8,4 +8,112 @@ AvatarMask:
   m_PrefabAsset: {fileID: 0}
   m_Name: DeerNeck
   m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-  m_Elements: []
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Ricke
+    m_Weight: 0
+  - m_Path: root
+    m_Weight: 0
+  - m_Path: root/root
+    m_Weight: 0
+  - m_Path: root/root/f_toe.L_IK
+    m_Weight: 0
+  - m_Path: root/root/f_toe.L_IK/f_toe.L_IK_end
+    m_Weight: 0
+  - m_Path: root/root/f_toe.R_IK
+    m_Weight: 0
+  - m_Path: root/root/f_toe.R_IK/f_toe.R_IK_end
+    m_Weight: 0
+  - m_Path: root/root/r_toe.L_IK
+    m_Weight: 0
+  - m_Path: root/root/r_toe.L_IK/r_toe.L_IK_end
+    m_Weight: 0
+  - m_Path: root/root/r_toe.R_IK
+    m_Weight: 0
+  - m_Path: root/root/r_toe.R_IK/r_toe.R_IK_end
+    m_Weight: 0
+  - m_Path: root/root/spine.001
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.L
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.L/upper_arm.L
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.L/upper_arm.L/forearm.L
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.L/upper_arm.L/forearm.L/forefoot.L
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.L/upper_arm.L/forearm.L/forefoot.L/f_toe.L
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.L/upper_arm.L/forearm.L/forefoot.L/f_toe.L/f_toe.L_end
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.R
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.R/upper_arm.R
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.R/upper_arm.R/forearm.R
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.R/upper_arm.R/forearm.R/forefoot.R
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.R/upper_arm.R/forearm.R/forefoot.R/f_toe.R
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/shoulder.R/upper_arm.R/forearm.R/forefoot.R/f_toe.R/f_toe.R_end
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004/head
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004/head/eye.L
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004/head/eye.L/eye.L_end
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004/head/eye.R
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004/head/eye.R/eye.R_end
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004/head/neck.004_L.001
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004/head/neck.004_L.001/neck.004_L.001_end
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004/head/neck.004_R.001
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004/head/neck.004_R.001/neck.004_R.001_end
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004/head/nose
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/spine.005/spine.006/neck.001/neck.003/neck.004/head/nose/nose_end
+    m_Weight: 1
+  - m_Path: root/root/spine.001/spine.002/thigh.L
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/thigh.L/lower_leg.L
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/thigh.L/lower_leg.L/hind_foot.L
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/thigh.L/lower_leg.L/hind_foot.L/r_toe.L
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/thigh.L/lower_leg.L/hind_foot.L/r_toe.L/r_toe.L_end
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/thigh.R
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/thigh.R/lower_leg.R
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/thigh.R/lower_leg.R/hind_foot.R
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/thigh.R/lower_leg.R/hind_foot.R/r_toe.R
+    m_Weight: 0
+  - m_Path: root/root/spine.001/spine.002/thigh.R/lower_leg.R/hind_foot.R/r_toe.R/r_toe.R_end
+    m_Weight: 0
+  - m_Path: root/root/spine.001/tail.001
+    m_Weight: 0
+  - m_Path: root/root/spine.001/tail.001/tail.001_end
+    m_Weight: 0
