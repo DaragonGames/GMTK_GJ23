@@ -1,29 +1,9 @@
 fileFormatVersion: 2
-guid: b9f669a39caf85a46a38af6e69a3505d
+guid: 970462cdc80d4784b858c2e0872a67e4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: foliage
-    second: {fileID: 2100000, guid: 5c939689800d3844ab3f8ba466ebc6d3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: foliage.001
-    second: {fileID: 2100000, guid: 5c939689800d3844ab3f8ba466ebc6d3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wood
-    second: {fileID: 2100000, guid: 86064f974941c7a42a997494dd43deb5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wood.001
-    second: {fileID: 2100000, guid: 86064f974941c7a42a997494dd43deb5, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -55,9 +35,9 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
