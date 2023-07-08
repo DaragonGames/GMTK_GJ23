@@ -6,7 +6,12 @@ using UnityEngine;
 public class DeerMovement : MonoBehaviour
 {
     private Rigidbody rigidbody;
+    private AudioSource audioSource;
     private Vector3 direction = Vector3.right;
+
+    // These are the sounds of the deer
+    public AudioClip walkingSound;
+    public AudioClip runningSound;
 
     // These Values are used to tweek the deer Movement
     public float turningPower = 45;
@@ -21,12 +26,13 @@ public class DeerMovement : MonoBehaviour
     [NonSerialized]
     public bool isInAir;
 
-    public float relativeSpeed = 0f;
+    public float relativeSpeed = 0;
     public Animator _animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rigidbody = GetComponent<Rigidbody>();
         float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, angle, 0);
@@ -72,8 +78,10 @@ public class DeerMovement : MonoBehaviour
                 Break();
             }
         }
-             
+        relativeSpeed = speed / 45;
         SetAnimationValues(input);
+
+        ManageSound();
     }
 
     private void Break()
@@ -84,8 +92,7 @@ public class DeerMovement : MonoBehaviour
             speed = 0;
         }
         Vector3 force = direction * speed  * Time.deltaTime;
-        rigidbody.MovePosition(transform.position + force);
-        relativeSpeed = 45 / speed;
+        rigidbody.MovePosition(transform.position + force);        
     }
 
     private void Move(ref Vector2 input)
@@ -125,8 +132,7 @@ public class DeerMovement : MonoBehaviour
 
         // Move and rotate Deer
         Vector3 force = direction * speed * input.x * Time.deltaTime;
-        rigidbody.Move(transform.position + force, rotation);
-        relativeSpeed = 45 / speed;
+        rigidbody.Move(transform.position + force, rotation);        
     }
 
     private void SetAnimationValues(Vector2 input)
@@ -137,5 +143,30 @@ public class DeerMovement : MonoBehaviour
     public Vector3 FacingDirection()
     {
         return direction;
+    }
+
+    private void ManageSound()
+    {
+        if (relativeSpeed == 0)
+        {
+            audioSource.Stop();
+        }
+        else
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+            if (relativeSpeed > 0.67f)
+            {
+                audioSource.clip = runningSound;
+                audioSource.volume = 0.75f;
+            }
+            else
+            {
+                audioSource.clip = walkingSound;
+                audioSource.volume = relativeSpeed;
+            }
+        }
     }
 }
