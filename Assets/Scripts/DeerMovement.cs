@@ -6,12 +6,10 @@ using UnityEngine;
 public class DeerMovement : MonoBehaviour
 {
     private Rigidbody rigidbody;
-    private AudioSource audioSource;
+
     private Vector3 direction = Vector3.right;
 
-    // These are the sounds of the deer
-    public AudioClip walkingSound;
-    public AudioClip runningSound;
+
 
     // These Values are used to tweek the deer Movement
     public float turningPower = 45;
@@ -26,13 +24,13 @@ public class DeerMovement : MonoBehaviour
     [NonSerialized]
     public bool isInAir;
 
-    public float relativeSpeed = 0;
+    public static float relativeSpeed = 0;
     public Animator _animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+
         rigidbody = GetComponent<Rigidbody>();
         float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, angle, 0);
@@ -45,7 +43,7 @@ public class DeerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             input.x += 1;
-            
+
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -80,8 +78,6 @@ public class DeerMovement : MonoBehaviour
         }
         relativeSpeed = speed / 45;
         SetAnimationValues(input);
-
-        ManageSound();
     }
 
     private void Break()
@@ -91,8 +87,8 @@ public class DeerMovement : MonoBehaviour
         {
             speed = 0;
         }
-        Vector3 force = direction * speed  * Time.deltaTime;
-        rigidbody.MovePosition(transform.position + force);        
+        Vector3 force = direction * speed * Time.deltaTime;
+        rigidbody.MovePosition(transform.position + force);
     }
 
     private void Move(ref Vector2 input)
@@ -105,7 +101,7 @@ public class DeerMovement : MonoBehaviour
         }
 
         // Set Rotation        
-        float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg - turningPower * Time.deltaTime*input.y;
+        float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg - turningPower * Time.deltaTime * input.y;
         Quaternion rotation = Quaternion.Euler(0, angle, 0);
         direction = rotation * Vector3.forward;
 
@@ -116,12 +112,12 @@ public class DeerMovement : MonoBehaviour
         }
 
         // Define the Speed
-        speed += acceleration* Time.deltaTime * sprinting;
+        speed += acceleration * Time.deltaTime * sprinting;
         if (speed < minSpeed)
         {
             speed = minSpeed;
         }
-        if (speed > maxSpeed* sprinting)
+        if (speed > maxSpeed * sprinting)
         {
             speed -= breakingSpeed * Time.deltaTime;
             if (speed < maxSpeed * sprinting)
@@ -132,7 +128,7 @@ public class DeerMovement : MonoBehaviour
 
         // Move and rotate Deer
         Vector3 force = direction * speed * input.x * Time.deltaTime;
-        rigidbody.Move(transform.position + force, rotation);        
+        rigidbody.Move(transform.position + force, rotation);
     }
 
     private void SetAnimationValues(Vector2 input)
@@ -145,28 +141,4 @@ public class DeerMovement : MonoBehaviour
         return direction;
     }
 
-    private void ManageSound()
-    {
-        if (relativeSpeed == 0)
-        {
-            audioSource.Stop();
-        }
-        else
-        {
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-            }
-            if (relativeSpeed > 0.67f)
-            {
-                audioSource.clip = runningSound;
-                audioSource.volume = 0.75f;
-            }
-            else
-            {
-                audioSource.clip = walkingSound;
-                audioSource.volume = relativeSpeed;
-            }
-        }
-    }
 }

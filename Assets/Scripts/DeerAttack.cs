@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeerAttack : MonoBehaviour
 {
     public Animator _animator;
-    private float deerReach = 2.5f;
+    private float reach = 2.5f;
 
     // Update is called once per frame
     void Update()
@@ -21,7 +21,7 @@ public class DeerAttack : MonoBehaviour
     {
         _animator.SetTrigger("DoPushing");
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, facingDirection,  out hit, deerReach, LayerMask.GetMask("Destroyable")))
+        if (Physics.Raycast(transform.position, facingDirection,  out hit, reach, LayerMask.GetMask("Destroyable")))
         {
             if (hit.collider != null)
             {
@@ -31,7 +31,7 @@ public class DeerAttack : MonoBehaviour
             return;
         }
 
-        if (Physics.Raycast(transform.position-new Vector3(0,0.5f,0), facingDirection, out hit, deerReach, LayerMask.GetMask("Destroyable")))
+        if (Physics.Raycast(transform.position-new Vector3(0,0.5f,0), facingDirection, out hit, reach, LayerMask.GetMask("Destroyable")))
         {
             if (hit.collider != null)
             {
@@ -40,7 +40,7 @@ public class DeerAttack : MonoBehaviour
             return;
         }
 
-        if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), facingDirection, out hit, deerReach, LayerMask.GetMask("Destroyable")))
+        if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), facingDirection, out hit, reach, LayerMask.GetMask("Destroyable")))
         {
             if (hit.collider != null)
             {
