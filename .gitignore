@@ -14,6 +14,7 @@ sysinfo.txt
 /Assets/TextMesh Pro
 *.apk
 *.unitypackage
+[Ll]ogs/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
