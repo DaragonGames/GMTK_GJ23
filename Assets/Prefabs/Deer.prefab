@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2319100864559001229}
   - component: {fileID: 9078776190638396709}
   - component: {fileID: 2546022711064182198}
+  - component: {fileID: 5494946547801357963}
   m_Layer: 0
   m_Name: Deer
   m_TagString: Untagged
@@ -133,6 +134,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &5494946547801357963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8686350331432280982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e9ab15e1a8b0045baff5d462689f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9047258651622090608
 GameObject:
   m_ObjectHideFlags: 0

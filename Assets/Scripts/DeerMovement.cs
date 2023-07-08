@@ -77,5 +77,8 @@ public class DeerMovement : MonoBehaviour
         _animator.SetFloat("Speed", input.x);
         _animator.SetBool("IsOnGround", !isInAir);
     }
-
+    public Vector3 FacingDirection()
+    {
+        return direction;
+    }
 }
