@@ -10,7 +10,7 @@ public class AnimatorSounds : MonoBehaviour
     public void FootStepSound()
     {
         
-        Debug.Log("Footstep sound played!");
+        //SDebug.Log("Footstep sound played!");
         if (FootstepSounds.Count > 0)
         {
             GetComponent<AudioSource>().PlayOneShot(FootstepSounds[Random.Range(0, FootstepSounds.Count)]);

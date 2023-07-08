@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.tag == "Ground")
+        {
+            return;
+        }
+        Deer deer = other.gameObject.GetComponent<Deer>();
+        if (deer != null)
+        {
+            deer.GetTrapped();
+        }
+        GetComponent<AudioSource>().Play();
+        StartCoroutine(DeleaydDestruction());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator DeleaydDestruction()
     {
-        
+        yield return new WaitForSeconds(.5f);
+        Destroy(gameObject);
     }
+
 }

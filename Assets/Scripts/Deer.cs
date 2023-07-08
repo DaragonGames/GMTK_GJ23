@@ -57,4 +57,8 @@ public class Deer : MonoBehaviour
     {
 
     }
+
+    public void GetTrapped()
+    {
+    }
 }
