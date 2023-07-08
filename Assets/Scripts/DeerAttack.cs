@@ -19,13 +19,14 @@ public class DeerAttack : MonoBehaviour
 
     private void Attack(Vector3 facingDirection)
     {
+        _animator.SetTrigger("DoPushing");
         RaycastHit hit;
         if (Physics.Raycast(transform.position, facingDirection,  out hit, deerReach, LayerMask.GetMask("Destroyable")))
         {
             if (hit.collider != null)
             {
                 hit.collider.GetComponent<CampEquipment>().CreateDestruction();
-                _animator.SetTrigger("DoPushing");
+                
             }
             return;
         }
@@ -35,7 +36,6 @@ public class DeerAttack : MonoBehaviour
             if (hit.collider != null)
             {
                 hit.collider.GetComponent<CampEquipment>().CreateDestruction();
-                _animator.SetTrigger("DoPushing");
             }
             return;
         }
@@ -45,7 +45,6 @@ public class DeerAttack : MonoBehaviour
             if (hit.collider != null)
             {
                 hit.collider.GetComponent<CampEquipment>().CreateDestruction();
-                _animator.SetTrigger("DoPushing");
             }
             return;
         }
