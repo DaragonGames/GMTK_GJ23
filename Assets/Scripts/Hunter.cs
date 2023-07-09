@@ -151,6 +151,7 @@ public class Hunter : MonoBehaviour
         {
             moving = true;
             movementGoal = Deer.player.transform.position;
+            tracking = 0; 
         }
         else
         {
