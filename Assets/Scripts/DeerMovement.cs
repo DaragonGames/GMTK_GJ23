@@ -12,13 +12,13 @@ public class DeerMovement : MonoBehaviour
 
 
     // These Values are used to tweek the deer Movement
-    public float turningPower = 45;
+    public float turningPower = 60;
     public float speed = 0f;
-    public float sprintingFactor = 1.5f;
-    public float maxSpeed = 20f;
-    public float minSpeed = 10;
-    public float acceleration = 5f;
-    public float breakingSpeed = 30f;
+    private float sprintingFactor = 1.6f;
+    private float maxSpeed = 25f;
+    private float minSpeed = 8;
+    private float acceleration = 4f;
+    private float breakingSpeed = 20f;
     private float sprinting = 1f;
     private float lastDirection;
     private float trapped = 0f;
