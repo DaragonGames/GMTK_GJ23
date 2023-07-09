@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7669041ed0cdd4e40994a572fe308c20
+guid: 64998d14d843e894784804bc73784531
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: rock
-    second: {fileID: 2100000, guid: c0cbca4d75769614c90368f75ad51225, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 5f7c869008aa5d84abd777cc55b105a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: f1ac79c8860e34c438a0575a6cc543ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mushroom
+    second: {fileID: 2100000, guid: f1ac79c8860e34c438a0575a6cc543ab, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -40,7 +50,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 3
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -95,7 +105,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 3
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

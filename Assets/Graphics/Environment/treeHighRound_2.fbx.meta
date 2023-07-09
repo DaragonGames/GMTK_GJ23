@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7669041ed0cdd4e40994a572fe308c20
+guid: 1839c789a74c97549a1990f3fb318958
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: rock
-    second: {fileID: 2100000, guid: c0cbca4d75769614c90368f75ad51225, type: 2}
+      name: foliage
+    second: {fileID: 2100000, guid: b7637640c1ba8fe4696cbc5991a0c8a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: 86064f974941c7a42a997494dd43deb5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -40,7 +45,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 3
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -95,7 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 3
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

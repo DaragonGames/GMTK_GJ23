@@ -36,7 +36,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Run
-  m_Speed: 2
+  m_Speed: 0.04
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5491493918694021589}
@@ -52,7 +52,7 @@ AnimatorState:
   m_Motion: {fileID: 5522812681064789136, guid: fe275b0ac05233b43977cd566dfab1af,
     type: 3}
   m_Tag: 
-  m_SpeedParameter: Speed
+  m_SpeedParameter: AbsoluteSpeed
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -64,7 +64,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walk
-  m_Speed: 4
+  m_Speed: 0.09
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4678989813711168234}
@@ -81,7 +81,7 @@ AnimatorState:
   m_Motion: {fileID: -5119403152678689918, guid: fe275b0ac05233b43977cd566dfab1af,
     type: 3}
   m_Tag: 
-  m_SpeedParameter: Speed
+  m_SpeedParameter: AbsoluteSpeed
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -119,7 +119,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: Speed
+    m_ConditionEvent: RelativeSpeed
     m_EventTreshold: 0.45
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8002657740017099036}
@@ -159,7 +159,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: Speed
+    m_ConditionEvent: RelativeSpeed
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3873698187247594570}
@@ -184,7 +184,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: Speed
+    m_ConditionEvent: RelativeSpeed
     m_EventTreshold: 0.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8025118792038186803}
@@ -209,7 +209,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: Speed
+    m_ConditionEvent: RelativeSpeed
     m_EventTreshold: -0.1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1667438943307238921}
@@ -234,24 +234,30 @@ AnimatorController:
   m_Name: RickeAnimator
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Speed
+  - m_Name: RelativeSpeed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: IsOnGround
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: DoPushing
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
+  - m_Name: AbsoluteSpeed
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -341,7 +347,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Backwards
-  m_Speed: 4
+  m_Speed: 0.1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5229778732373753064}
@@ -357,7 +363,7 @@ AnimatorState:
   m_Motion: {fileID: -5119403152678689918, guid: fe275b0ac05233b43977cd566dfab1af,
     type: 3}
   m_Tag: 
-  m_SpeedParameter: Speed
+  m_SpeedParameter: AbsoluteSpeed
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -392,7 +398,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: Speed
+    m_ConditionEvent: RelativeSpeed
     m_EventTreshold: 0.02
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8002657740017099036}
@@ -474,7 +480,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: Speed
+    m_ConditionEvent: RelativeSpeed
     m_EventTreshold: -0.1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3873698187247594570}
