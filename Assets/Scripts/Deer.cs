@@ -41,7 +41,17 @@ public class Deer : MonoBehaviour
         deerMovement.Trapped();
         if (health <= 0)
         {
-            isDead = true;
+            Die();
         }
+    }
+    public void Die()
+    {
+        isDead = true;
+        if (_animator)
+        {
+            _animator.SetTrigger("OnDeath");
+            _animator.SetBool("IsDead", true);
+        }
+        EventManager.GameOverEvent(false);
     }
 }
