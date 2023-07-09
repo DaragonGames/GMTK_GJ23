@@ -29,7 +29,7 @@ public class SmoothCamera : MonoBehaviour
         }
         if (CameraDistance > MaxDistance)
         {
-            transform.position = DeerPosition + direction * MaxDistance;
+            transform.position = DeerPosition - direction * MaxDistance;
         }
         else
         {
