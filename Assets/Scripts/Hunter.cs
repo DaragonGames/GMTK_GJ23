@@ -11,7 +11,7 @@ public class Hunter : MonoBehaviour
     private float criticalShootRange = 15f;
     private float movementSpeed = 4;
     private float timeBetweenActions = 5f;
-    public int patience = 100;
+    public int patience = 10;
 
     // Event Variables
     private float actionTimer = 3f;
@@ -66,13 +66,13 @@ public class Hunter : MonoBehaviour
                 case float n when (n >= 0 && n < 50):
                     MoveRandomly();
                     break;
-                case float n when (n >= 50 && n < 70):
+                case float n when (n >= 50 && n < 10):
                     MoveToCamp();
                     break;
-                case float n when (n >= 70 && n < 85):
+                case float n when (n >= 60 && n < 85):
                     LayTrap();
                     break;
-                case float n when (n >= 85 && n < 95):
+                case float n when (n >= 80 && n < 95):
                     TrackTarget();
                     break;
                 case float n when (n >= 95):
@@ -84,7 +84,12 @@ public class Hunter : MonoBehaviour
         }
         if (patience <= 0)
         {
-            Debug.Log("A Hunter has run out of patience.");
+            hunters.Remove(this);
+            if (hunters.Count == 0)
+            {
+                EventManager.GameOverEvent(true);
+            }
+            Destroy(gameObject);
         }
     }
 
@@ -130,6 +135,7 @@ public class Hunter : MonoBehaviour
         if (traps >= 1)
         {
             Instantiate(trap, transform.position, Quaternion.identity);
+            traps -= 1;
         }
         else
         {

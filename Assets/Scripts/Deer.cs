@@ -20,6 +20,7 @@ public class Deer : MonoBehaviour
         player = gameObject;
         audioSource = GetComponent<AudioSource>();
         deerMovement = GetComponent<DeerMovement>();
+        isDead = false;
     }
 
     void Update()
@@ -64,6 +65,7 @@ public class Deer : MonoBehaviour
         if (health <= 0)
         {
             isDead = true;
+            EventManager.GameOverEvent(false);
         }
     }
 
@@ -74,6 +76,7 @@ public class Deer : MonoBehaviour
         if (health <= 0)
         {
             isDead = true;
+            EventManager.GameOverEvent(false);
         }
     }
 }

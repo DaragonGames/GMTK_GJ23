@@ -6,7 +6,7 @@ public class DeerSniffing : MonoBehaviour
 {
     private float reach = 75;
     public GameObject dangerIndicator;
-    private float coolDown = 10f;
+    private float coolDown = 0f;
 
     // Update is called once per frame
     void Update()
