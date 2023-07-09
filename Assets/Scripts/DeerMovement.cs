@@ -15,7 +15,7 @@ public class DeerMovement : MonoBehaviour
     public float turningPower = 45;
     public float speed = 0f;
     public float sprintingFactor = 1.5f;
-    public float maxSpeed = 30f;
+    public float maxSpeed = 20f;
     public float minSpeed = 10;
     public float acceleration = 5f;
     public float breakingSpeed = 30f;
@@ -89,6 +89,10 @@ public class DeerMovement : MonoBehaviour
         }
         relativeSpeed = speed / (sprintingFactor*maxSpeed*lastDirection);
         SetAnimationValues(input);
+        if (transform.position.y <= -2)
+        {
+            DontDig();
+        }
     }
 
     private void Break()
@@ -181,4 +185,8 @@ public class DeerMovement : MonoBehaviour
         trapped = UnityEngine.Random.Range(1f, 3f);
     }
 
+    public void DontDig()
+    {
+        transform.position += new Vector3(0, 10, 0);
+    }
 }
