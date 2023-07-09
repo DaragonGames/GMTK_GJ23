@@ -6,11 +6,20 @@ public class DeerSniffing : MonoBehaviour
 {
     private float reach = 75;
     public GameObject dangerIndicator;
-    // Start is called before the first frame update
+    private float coolDown = 10f;
 
     // Update is called once per frame
     void Update()
     {
+        if (Deer.isDead)
+        {
+            return;
+        }
+        if (coolDown > 0)
+        {
+            coolDown -= Time.deltaTime;
+            return;
+        }
         if (Input.GetKey(KeyCode.Q))
         {
             Sniff();
@@ -19,6 +28,7 @@ public class DeerSniffing : MonoBehaviour
 
     private void Sniff()
     {
+        GetComponent<AudioSource>().Play();
         EventManager.SniffingEvent();
         foreach (Hunter hunter in Hunter.hunters)
         {

@@ -39,6 +39,10 @@ public class Hunter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Deer.isDead)
+        {
+            return;
+        }
         if (moving)
         {
             Vector3 direction = (movementGoal - transform.position);

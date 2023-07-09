@@ -5,7 +5,8 @@ using UnityEngine;
 public class Deer : MonoBehaviour
 {
     public static GameObject player;
-    public float health;
+    public static bool isDead = false;
+    public float health = 100;
     private DeerMovement deerMovement;
     private AudioSource audioSource;
 
@@ -60,11 +61,19 @@ public class Deer : MonoBehaviour
         {
             health -= 40;
         }
+        if (health <= 0)
+        {
+            isDead = true;
+        }
     }
 
     public void GetTrapped()
     {
         health -= 25;
         deerMovement.Trapped();
+        if (health <= 0)
+        {
+            isDead = true;
+        }
     }
 }

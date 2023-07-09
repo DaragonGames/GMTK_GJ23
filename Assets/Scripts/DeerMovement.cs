@@ -41,6 +41,10 @@ public class DeerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Deer.isDead)
+        {
+            return;
+        }
         if (trapped > 0)
         {
             trapped -= Time.deltaTime;

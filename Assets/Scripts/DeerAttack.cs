@@ -10,6 +10,10 @@ public class DeerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Deer.isDead)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             Vector3 facingDirection = gameObject.GetComponent<DeerMovement>().FacingDirection();
