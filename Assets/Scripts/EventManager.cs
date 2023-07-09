@@ -15,4 +15,10 @@ public class EventManager
     {
         GameOverAction?.Invoke(victory);
     }
+
+    public static event Action SniffingAction;
+    public static void SniffingEvent()
+    {
+        SniffingAction?.Invoke();
+    }
 }
