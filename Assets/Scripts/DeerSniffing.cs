@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,12 @@ public class DeerSniffing : MonoBehaviour
     private float reach = 75;
     public GameObject dangerIndicator;
     private float coolDown = 0f;
+    public static DeerSniffing Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Update is called once per frame
     void Update()
@@ -40,5 +47,10 @@ public class DeerSniffing : MonoBehaviour
             }
         }
         coolDown = 10f;
+    }
+
+    public float GetSniffCooldown()
+    {
+        return coolDown;
     }
 }
