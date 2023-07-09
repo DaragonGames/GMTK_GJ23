@@ -14,9 +14,15 @@ public class CampEquipment : MonoBehaviour
     public void CreateDestruction()
     {
         Instantiate(smokePrefab, transform.position, Quaternion.identity);
-        //Instantiate(alternativeVersion, transform.position, Quaternion.identity);
+        if (alternativeVersion != null)
+        {
+            Instantiate(alternativeVersion, transform.position, Quaternion.identity);
+        }
         EventManager.DestructionOfPropertyEvent(globalAnnoyanceValue);
-        //associatedHunter.LosePatience(personalAnnoyanceValue);
+        if (associatedHunter != null)
+        {
+            associatedHunter.LosePatience(personalAnnoyanceValue);
+        }
         Destroy(gameObject);
     }
 }

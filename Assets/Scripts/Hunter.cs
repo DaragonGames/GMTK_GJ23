@@ -11,7 +11,7 @@ public class Hunter : MonoBehaviour
     private float criticalShootRange = 15f;
     private float movementSpeed = 4;
     private float timeBetweenActions = 5f;
-    private int patience = 100;
+    public int patience = 100;
 
     // Event Variables
     private float actionTimer = 3f;
@@ -102,7 +102,7 @@ public class Hunter : MonoBehaviour
                 Deer deer = hit.collider.GetComponent<Deer>();
                 if (deer !=null)
                 {
-                    deer.Die();
+                    deer.GetShoot(true);
                 }
             }
         }
@@ -166,7 +166,7 @@ public class Hunter : MonoBehaviour
                 Deer deer = hit.collider.GetComponent<Deer>();
                 if (deer != null)
                 {
-                    deer.GetShoot();
+                    deer.GetShoot(false);
                 }
             }
         }

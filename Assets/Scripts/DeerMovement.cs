@@ -21,6 +21,7 @@ public class DeerMovement : MonoBehaviour
     public float breakingSpeed = 30f;
     private float sprinting = 1f;
     private int lastDirection;
+    private float trapped = 0f;
 
     [NonSerialized]
     public bool isInAir;
@@ -40,6 +41,11 @@ public class DeerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (trapped > 0)
+        {
+            trapped -= Time.deltaTime;
+            return;
+        }
         Vector2 input = new Vector2();
         if (Input.GetKey(KeyCode.W))
         {
@@ -143,6 +149,14 @@ public class DeerMovement : MonoBehaviour
     public Vector3 FacingDirection()
     {
         return direction;
+    }
+
+    public void Trapped()
+    {
+        speed = 0;
+        maxSpeed *= 0.9f;
+        acceleration *= 0.9f;
+        trapped = UnityEngine.Random.Range(1f, 3f);
     }
 
 }

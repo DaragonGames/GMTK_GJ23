@@ -5,6 +5,8 @@ using UnityEngine;
 public class Deer : MonoBehaviour
 {
     public static GameObject player;
+    public float health;
+    private DeerMovement deerMovement;
     private AudioSource audioSource;
 
     // These are the sounds of the deer
@@ -16,6 +18,7 @@ public class Deer : MonoBehaviour
     {
         player = gameObject;
         audioSource = GetComponent<AudioSource>();
+        deerMovement = GetComponent<DeerMovement>();
     }
 
     void Update()
@@ -50,17 +53,18 @@ public class Deer : MonoBehaviour
         */
     }
 
-    public void Die()
+    public void GetShoot(bool critical)
     {
-
-    }
-
-    public void GetShoot()
-    {
-
+        health -= 50;
+        if (critical)
+        {
+            health -= 40;
+        }
     }
 
     public void GetTrapped()
     {
+        health -= 25;
+        deerMovement.Trapped();
     }
 }
