@@ -29,8 +29,11 @@ public class DeerAttack : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                hit.collider.GetComponent<CampEquipment>().CreateDestruction();
-                
+                CampEquipment equipment = hit.collider.GetComponent<CampEquipment>();
+                if (equipment != null)
+                {
+                    equipment.CreateDestruction();
+                }    
             }
             return;
         }

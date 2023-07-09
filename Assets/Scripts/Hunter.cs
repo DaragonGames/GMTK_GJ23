@@ -11,7 +11,7 @@ public class Hunter : MonoBehaviour
     private float criticalShootRange = 15f;
     private float movementSpeed = 4;
     private float timeBetweenActions = 5f;
-    public int patience = 10;
+    public int patience = 100;
 
     // Event Variables
     private float actionTimer = 3f;
@@ -39,6 +39,15 @@ public class Hunter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (patience <= 0)
+        {
+            hunters.Remove(this);
+            if (hunters.Count == 0)
+            {
+                EventManager.GameOverEvent(true);
+            }
+            return;
+        }
         if (Deer.isDead)
         {
             return;
@@ -81,15 +90,6 @@ public class Hunter : MonoBehaviour
             }
             actionTimer = Random.Range(timeBetweenActions*0.75f, timeBetweenActions * 1.25f);
             patience--;
-        }
-        if (patience <= 0)
-        {
-            hunters.Remove(this);
-            if (hunters.Count == 0)
-            {
-                EventManager.GameOverEvent(true);
-            }
-            Destroy(gameObject);
         }
     }
 

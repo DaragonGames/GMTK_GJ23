@@ -43,6 +43,8 @@ public class DeerMovement : MonoBehaviour
     {
         if (Deer.isDead)
         {
+            speed = 0;
+            relativeSpeed = 0;
             return;
         }
         if (trapped > 0)
