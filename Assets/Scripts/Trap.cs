@@ -11,6 +11,7 @@ public class Trap : MonoBehaviour
             return;
         }
         Deer deer = other.gameObject.GetComponent<Deer>();
+        transform.GetChild(0).GetComponent<Animator>().SetTrigger("Close");
         if (deer != null)
         {
             deer.GetTrapped();
