@@ -39,5 +39,6 @@ public class DeerSniffing : MonoBehaviour
                 Instantiate(dangerIndicator, hunter.transform.position-(Vector3.up*2), Quaternion.identity);
             }
         }
+        coolDown = 10f;
     }
 }
