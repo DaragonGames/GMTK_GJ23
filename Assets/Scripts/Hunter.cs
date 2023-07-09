@@ -11,6 +11,7 @@ public class Hunter : MonoBehaviour
     private float criticalShootRange = 15f;
     private float movementSpeed = 4;
     private float timeBetweenActions = 5f;
+    private int patience = 100;
 
     // Event Variables
     private float actionTimer = 3f;
@@ -27,6 +28,12 @@ public class Hunter : MonoBehaviour
         hunters.Add(this);
         audioSource = GetComponent<AudioSource>();
         campCordinates = transform.position;
+        EventManager.DestructionOfPropertyAction += LosePatience;
+    }
+
+    void OnDestroy()
+    {
+        EventManager.DestructionOfPropertyAction -= LosePatience;
     }
 
     // Update is called once per frame
@@ -69,6 +76,11 @@ public class Hunter : MonoBehaviour
                     break;
             }
             actionTimer = Random.Range(timeBetweenActions*0.75f, timeBetweenActions * 1.25f);
+            patience--;
+        }
+        if (patience <= 0)
+        {
+            Debug.Log("A Hunter has run out of patience.");
         }
     }
 
@@ -118,6 +130,7 @@ public class Hunter : MonoBehaviour
         else
         {
             traps += Random.Range(0.1f, 0.3f);
+            patience--;
         }
     }
 
@@ -131,6 +144,7 @@ public class Hunter : MonoBehaviour
         else
         {
             tracking += Random.Range(5f, 25f);
+            patience--;
         }
     }
 
@@ -139,7 +153,8 @@ public class Hunter : MonoBehaviour
         audioSource.Play();
         Vector3 direction = Deer.player.transform.position - transform.position;
         if (direction.magnitude *2 > Random.Range(1,100) )
-        {            
+        {
+            patience -= 5;
             return;
         }
 
@@ -156,4 +171,12 @@ public class Hunter : MonoBehaviour
             }
         }
     }
+
+    public void LosePatience(int n)
+    {
+        patience-= n;
+    }
+
+
+
 }

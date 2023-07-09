@@ -14,12 +14,13 @@ public class DeerMovement : MonoBehaviour
     // These Values are used to tweek the deer Movement
     public float turningPower = 45;
     public float speed = 0f;
-
-    private float maxSpeed = 30f;
-    private float minSpeed = 10;
-    private float acceleration = 5f;
-    private float breakingSpeed = 30f;
+    public float sprintingFactor = 1.5f;
+    public float maxSpeed = 30f;
+    public float minSpeed = 10;
+    public float acceleration = 5f;
+    public float breakingSpeed = 30f;
     private float sprinting = 1f;
+    private int lastDirection;
 
     [NonSerialized]
     public bool isInAir;
@@ -59,7 +60,7 @@ public class DeerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            sprinting = 1.5f;
+            sprinting = sprintingFactor;
         }
         else
         {
@@ -76,7 +77,7 @@ public class DeerMovement : MonoBehaviour
                 Break();
             }
         }
-        relativeSpeed = speed / 45;
+        relativeSpeed = speed / sprintingFactor*maxSpeed*lastDirection;
         SetAnimationValues(input);
     }
 
@@ -87,17 +88,19 @@ public class DeerMovement : MonoBehaviour
         {
             speed = 0;
         }
-        Vector3 force = direction * speed * Time.deltaTime;
+        Vector3 force = direction * speed * Time.deltaTime* lastDirection;
         rigidbody.MovePosition(transform.position + force);
     }
 
     private void Move(ref Vector2 input)
     {
         // Change some values when going backwards
+        lastDirection = 1;
         if (input.x < 0)
         {
             input.y *= -1;
             sprinting = 1;
+            lastDirection = -1;
         }
 
         // Set Rotation        
