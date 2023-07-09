@@ -25,7 +25,7 @@ public class DeerMovement : MonoBehaviour
     [NonSerialized]
     public bool isInAir;
 
-    public static float relativeSpeed = 0;
+    public float relativeSpeed = 0;
     public Animator _animator;
 
     // Start is called before the first frame update
@@ -77,7 +77,7 @@ public class DeerMovement : MonoBehaviour
                 Break();
             }
         }
-        relativeSpeed = speed / sprintingFactor*maxSpeed*lastDirection;
+        relativeSpeed = speed / (sprintingFactor*maxSpeed*lastDirection);
         SetAnimationValues(input);
     }
 

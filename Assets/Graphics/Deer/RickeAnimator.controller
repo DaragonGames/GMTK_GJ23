@@ -36,7 +36,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Run
-  m_Speed: 0.04
+  m_Speed: 0.039
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5491493918694021589}
@@ -120,7 +120,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: RelativeSpeed
-    m_EventTreshold: 0.45
+    m_EventTreshold: 0.4
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8002657740017099036}
   m_Solo: 0
@@ -185,7 +185,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: RelativeSpeed
-    m_EventTreshold: 0.5
+    m_EventTreshold: 0.45
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8025118792038186803}
   m_Solo: 0
@@ -347,7 +347,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Backwards
-  m_Speed: 0.1
+  m_Speed: 3.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5229778732373753064}
@@ -363,7 +363,7 @@ AnimatorState:
   m_Motion: {fileID: -5119403152678689918, guid: fe275b0ac05233b43977cd566dfab1af,
     type: 3}
   m_Tag: 
-  m_SpeedParameter: AbsoluteSpeed
+  m_SpeedParameter: RelativeSpeed
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 

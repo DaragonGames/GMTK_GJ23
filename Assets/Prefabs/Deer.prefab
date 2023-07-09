@@ -32,6 +32,59 @@ Transform:
   m_Father: {fileID: 7942270118166199226}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &7289408887701040739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8689427305298257572}
+  - component: {fileID: 6130103248700694874}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8689427305298257572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7289408887701040739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7942270118166199226}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6130103248700694874
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7289408887701040739}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.22940306, y: 0.61827534, z: 0.73744434}
+  m_Center: {x: 0, y: 0.45018986, z: 0.05770114}
 --- !u!1 &8686350331432280982
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,6 +120,7 @@ Transform:
   m_Children:
   - {fileID: 2217868387000552344}
   - {fileID: 7499364449666589907}
+  - {fileID: 8689427305298257572}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,10 +136,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea75c37c93a119f459a25ebd3edda9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSound: {fileID: 8300000, guid: a5e81c4fb8f07614aaf9f73bb023f577, type: 3}
-  runningSound: {fileID: 8300000, guid: 11a6edd885b16f2409704024578750f7, type: 3}
   turningPower: 60
   speed: 0
+  sprintingFactor: 1.5
+  maxSpeed: 30
+  minSpeed: 10
+  acceleration: 15
+  breakingSpeed: 30
   relativeSpeed: 0
   _animator: {fileID: 9046357697148347705}
 --- !u!54 &9078776190638396709
@@ -134,10 +191,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Radius: 0.26179865
+  m_Height: 0.98143935
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.26, z: 0.050144196}
 --- !u!114 &5494946547801357963
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,6 +25,7 @@ public class Deer : MonoBehaviour
 
     private void ManageSound()
     {
+        /*
         if (DeerMovement.relativeSpeed == 0)
         {
             audioSource.Stop();
@@ -46,6 +47,7 @@ public class Deer : MonoBehaviour
                 audioSource.volume = DeerMovement.relativeSpeed;
             }
         }
+        */
     }
 
     public void Die()
