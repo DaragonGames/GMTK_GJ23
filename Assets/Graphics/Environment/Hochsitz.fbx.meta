@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 709a50405ecada546a87affa1714d1a8
+guid: 3b23a722e13cf2546be7634c430536ed
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,14 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: foliage
-    second: {fileID: 2100000, guid: 00f9c7ace79c7f04ca7038b40468b263, type: 2}
+      name: Metal
+    second: {fileID: -4973734387028869240, guid: 970462cdc80d4784b858c2e0872a67e4,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: 46b6efb5b70293d438425dd668a371b4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
