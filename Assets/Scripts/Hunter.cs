@@ -33,7 +33,8 @@ public class Hunter : MonoBehaviour
 
     void OnDestroy()
     {
-        EventManager.DestructionOfPropertyAction -= LosePatience;
+        hunters.Remove(this);
+        EventManager.DestructionOfPropertyAction -= LosePatience;        
     }
 
     // Update is called once per frame
