@@ -7,7 +7,7 @@ public class DeerMovement : MonoBehaviour
 {
     private Rigidbody rigidbody;
 
-    private Vector3 direction = Vector3.right;
+    private Vector3 direction = Vector3.forward;
 
 
 
