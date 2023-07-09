@@ -20,7 +20,7 @@ public class DeerMovement : MonoBehaviour
     public float acceleration = 5f;
     public float breakingSpeed = 30f;
     private float sprinting = 1f;
-    private int lastDirection;
+    private float lastDirection;
     private float trapped = 0f;
 
     [NonSerialized]
@@ -58,7 +58,7 @@ public class DeerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.S))
         {
-            input.x -= 0.5f;
+            input.x -= 0.3f;
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -105,18 +105,16 @@ public class DeerMovement : MonoBehaviour
     private void Move(ref Vector2 input)
     {
         // Change some values when going backwards
-        lastDirection = 1;
         if (input.x < 0)
         {
             input.y *= -1;
             sprinting = 1;
-            lastDirection = -1;
         }
 
         // Set Rotation        
         float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg - turningPower * Time.deltaTime * input.y;
         Quaternion rotation = Quaternion.Euler(0, angle, 0);
-        direction = rotation * Vector3.forward;
+        direction = rotation * Vector3.forward;        
 
         // Add forward Movement in case of only rotation Input
         if (input.x == 0)
@@ -124,20 +122,40 @@ public class DeerMovement : MonoBehaviour
             input.x = 0.7f;
         }
 
-        // Define the Speed
-        speed += acceleration * Time.deltaTime * sprinting;
-        if (speed < minSpeed)
+        // No sudden Change during forward/back Momentum
+        if (lastDirection * input.x < 0 && speed != 0)
         {
-            speed = minSpeed;
-        }
-        if (speed > maxSpeed * sprinting)
-        {
+            // Reduce Speed by x if at 0 or below continue as used
             speed -= breakingSpeed * Time.deltaTime;
-            if (speed < maxSpeed * sprinting)
+            if (speed < 0)
             {
-                speed = maxSpeed * sprinting;
+                speed = minSpeed;
+                lastDirection = input.x;
+            }
+            else
+            {
+                input.x = lastDirection;
             }
         }
+        else
+        {
+            lastDirection = input.x;
+
+            // Define the Speed
+            speed += acceleration * Time.deltaTime * sprinting;            
+            if (speed > maxSpeed * sprinting)
+            {
+                speed -= breakingSpeed * Time.deltaTime;
+                if (speed < maxSpeed * sprinting)
+                {
+                    speed = maxSpeed * sprinting;
+                }
+            }
+            if (speed < minSpeed)
+            {
+                speed = minSpeed;
+            }
+        }      
 
         // Move and rotate Deer
         Vector3 force = direction * speed * input.x * Time.deltaTime;

@@ -731,7 +731,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3f76bd8656c394990219418f219ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FootstepSounds: []
+  FootstepSounds:
+  - {fileID: 8300000, guid: b80dd947e80e6a448b098733218632c8, type: 3}
+  - {fileID: 8300000, guid: 7f49dd512d74cbc4fb1e0b0cc475daa9, type: 3}
+  - {fileID: 8300000, guid: 035fb635df9536a4b92b55248d3a7af8, type: 3}
+  - {fileID: 8300000, guid: 277cece53fd48ab40a173045481d69db, type: 3}
 --- !u!82 &7085787417934250510
 AudioSource:
   m_ObjectHideFlags: 0
@@ -742,7 +746,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b80dd947e80e6a448b098733218632c8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
